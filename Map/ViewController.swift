@@ -54,21 +54,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }else{
             manejador.requestWhenInUseAuthorization()
         }
-
     }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         
- /*
+ 
         if let oldLocationNew = oldLocation as CLLocation?{
             let oldCoordinates = oldLocationNew.coordinate
             let newCoordinates = newLocation.coordinate
             var area = [oldCoordinates, newCoordinates]
             let polyline = MKPolyline(coordinates: &area, count: area.count)
-            map.addOverlay(polyline)
+            self.map.addOverlay(polyline)
         }
-*/
-
+        
         if let _ = previousLocation as CLLocation?{
             //solo colocar marca cada x metros
             if previousLocation.distanceFromLocation(newLocation) > 50 {
@@ -110,15 +108,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer! {
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         
-        if (overlay is MKPolyline) {
-            let pr = MKPolylineRenderer(overlay: overlay)
-            pr.strokeColor = UIColor.redColor()
-            pr.lineWidth = 5
-            return pr
+        if overlay is MKPolyline {
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.whiteColor()
+            polylineRenderer.lineWidth = 2
+            return polylineRenderer
         }
-        
         return nil
     }
     
