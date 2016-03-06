@@ -66,4 +66,77 @@ public class URLrequests{
         }
         task.resume()
     }
+    
+    
+    func launch(myUrl: String, params : Dictionary<String, AnyObject>){
+        let request = NSMutableURLRequest(URL: NSURL(string: myUrl)!)
+        
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        
+        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+                let task = session.dataTaskWithRequest(request) { data, response, error in
+            guard data != nil else {
+                print("no data found: \(error)")
+                return
+            }
+            
+                    do {
+                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? NSDictionary {
+                    let success = json["success"] as? Int
+                    print("Success: \(success)")
+                    print(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
+                } else {
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: \(jsonStr)")
+                }
+            } catch let parseError {
+                print(parseError)
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: '\(jsonStr)'")
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func shoot(myUrl: String, params : Dictionary<String, AnyObject>){
+        let request = NSMutableURLRequest(URL: NSURL(string: myUrl)!)
+        
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "PUT"
+        
+        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            guard data != nil else {
+                print("no data found: \(error)")
+                return
+            }
+            
+            do {
+                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? NSDictionary {
+                    let success = json["success"] as? Int
+                    print("Success: \(success)")
+                    print("H + \(((json as NSDictionary) as Dictionary))")
+                } else {
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: \(jsonStr)")
+                }
+            } catch let parseError {
+                print(parseError)
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: '\(jsonStr)'")
+            }
+        }
+        
+        task.resume()
+    }
 }
+
+

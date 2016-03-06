@@ -16,11 +16,13 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
     
     var BetterLoginButton: UIButton!
     var data: NSUserDefaults!
+    var logoView = UIImageView()
+    var colorManager = ColorPallet()
     
     override func viewDidLoad() {
         data = NSUserDefaults.standardUserDefaults()
         setUPButton()
-        
+        self.view.backgroundColor = colorManager.generalColor
         
     }
     
@@ -28,8 +30,14 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
         loginView.center = self.view.center
+        loginView.frame.origin.y = self.view.frame.height/4 * 3
         loginView.readPermissions = ["public_profile", "email", "user_friends"]
         loginView.delegate = self
+        logoView.frame.size = CGSize(width: self.view.frame.width / 1.5, height: self.view.frame.width / 1.5)
+        logoView.center = self.view.center
+        logoView.frame.origin.y = self.view.frame.height/4
+        logoView.backgroundColor = UIColor.darkGrayColor()
+        self.view.addSubview(logoView)
     }
     
     func fetchData(){
@@ -57,7 +65,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         if self.data.stringForKey("Name") == nil {
             
         } else {
-            print(self.data.stringForKey("Photo"))
+            print("awesome")
             self.performSegueWithIdentifier("LoggedIn", sender: self)
         }
     }
