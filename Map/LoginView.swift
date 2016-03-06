@@ -22,7 +22,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         data = NSUserDefaults.standardUserDefaults()
         setUPButton()
-        self.view.backgroundColor = colorManager.generalColor
+        self.view.backgroundColor = UIColor.whiteColor()
         
     }
     
@@ -36,7 +36,10 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         logoView.frame.size = CGSize(width: self.view.frame.width / 1.5, height: self.view.frame.width / 1.5)
         logoView.center = self.view.center
         logoView.frame.origin.y = self.view.frame.height/4
-        logoView.backgroundColor = UIColor.darkGrayColor()
+        logoView.backgroundColor = UIColor.whiteColor()
+        logoView.layer.cornerRadius = self.logoView.frame.height/2
+        logoView.clipsToBounds = true
+        logoView.image = UIImage(named: "logo")
         self.view.addSubview(logoView)
     }
     

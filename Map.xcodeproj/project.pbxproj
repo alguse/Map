@@ -244,7 +244,7 @@
 				TargetAttributes = {
 					C61F74091C8171C500835A78 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6778VBNDT3;
+						DevelopmentTeam = YFJ48SR2KW;
 					};
 					C61F741D1C8171C500835A78 = {
 						CreatedOnToolsVersion = 7.3;
@@ -465,7 +465,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "/Users/sergioalbarran/Documents/FacebookSDKs-iOS-20160210/FacebookSDKs-iOS-20160210";
+				FRAMEWORK_SEARCH_PATHS = "/Users/Rodolfo/Documents/FacebookSDKs-iOS-20160210";
 				INFOPLIST_FILE = Map/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -484,7 +484,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "/Users/sergioalbarran/Documents/FacebookSDKs-iOS-20160210/FacebookSDKs-iOS-20160210";
+				FRAMEWORK_SEARCH_PATHS = "/Users/Rodolfo/Documents/FacebookSDKs-iOS-20160210";
 				INFOPLIST_FILE = Map/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

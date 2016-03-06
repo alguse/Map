@@ -25,14 +25,14 @@ class ColorPallet: NSObject {
     func getFacColor()->UIColor{
         if data.stringForKey("Fac") != nil {
             if data.stringForKey("Fac")! == "Charmander" {
-                return self.faccionA
+                return self.generalColor
             } else if data.stringForKey("Fac")! == "Squirtle"{
-                return self.faccionB
+                return self.generalColor
             } else {
-                return self.menusColor
+                return self.generalColor
             }
         } else {
-            return self.menusColor
+            return self.generalColor
         }
     }
     
