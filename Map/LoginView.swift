@@ -30,12 +30,9 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         loginView.center = self.view.center
         loginView.readPermissions = ["public_profile", "email", "user_friends"]
         loginView.delegate = self
-    
-        
     }
     
     func fetchData(){
-       
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,gender"])
             request.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -50,16 +47,39 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
                     self.data.setObject(result.valueForKey("id") as! String, forKey: "UserID")
                     self.data.setObject(result.valueForKey("name") as! String, forKey: "Name")
                     self.data.synchronize()
+                    self.getPhoto()
                 }
             })
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        if self.data.stringForKey("Name") == nil {
+            
+        } else {
+            print(self.data.stringForKey("Photo"))
+            self.performSegueWithIdentifier("LoggedIn", sender: self)
+        }
+    }
     
+    func getPhoto(){
+        let url = NSURL(string: "https://avatars.io/facebook/\(self.data.stringForKey("UserID")!)");
+        let dataPic = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        self.data.setObject(dataPic, forKey: "Photo")
+        self.data.synchronize()
+        
+        
+    }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!){
         fetchData()
         
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "LoggedIn" == segue.identifier{}
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!){

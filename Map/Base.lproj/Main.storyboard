@@ -1,27 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ebg-cf-Adu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f9Y-2x-ptC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="uCd-I9-MQf">
+        <!--Starting View-->
+        <scene sceneID="60D-u5-ik9">
             <objects>
-                <viewController id="ZvF-Go-O0E" sceneMemberID="viewController">
+                <viewController id="f9Y-2x-ptC" customClass="StartingView" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Sxl-zo-chq"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rcn-FV-9WN"/>
+                        <viewControllerLayoutGuide type="top" id="Xb6-hT-SUI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yce-de-IkM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7oB-J8-ISY">
+                    <view key="view" contentMode="scaleToFill" id="gLS-4K-Rtt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-23-LMb">
+                                <rect key="frame" x="20" y="28" width="39" height="30"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="openMenu" destination="f9Y-2x-ptC" eventType="touchUpInside" id="4mY-mI-tJK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcI-Zw-aKn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.28889627659574468" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="hideMenu" destination="f9Y-2x-ptC" eventType="touchUpInside" id="25F-lh-0ac"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YcI-Zw-aKn" firstAttribute="centerX" secondItem="gLS-4K-Rtt" secondAttribute="centerX" id="Iio-Ff-TQ6"/>
+                            <constraint firstItem="YcI-Zw-aKn" firstAttribute="top" secondItem="Xb6-hT-SUI" secondAttribute="bottom" constant="-20" id="KSH-AC-fpX"/>
+                            <constraint firstItem="YcI-Zw-aKn" firstAttribute="centerY" secondItem="gLS-4K-Rtt" secondAttribute="centerY" id="P2n-TC-JwC"/>
+                            <constraint firstItem="Yce-de-IkM" firstAttribute="top" secondItem="YcI-Zw-aKn" secondAttribute="bottom" id="S5N-fV-nCP"/>
+                            <constraint firstItem="YcI-Zw-aKn" firstAttribute="leading" secondItem="gLS-4K-Rtt" secondAttribute="leadingMargin" constant="-20" id="ZRh-o7-Xwb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YcI-Zw-aKn" secondAttribute="trailing" constant="-20" id="cON-ur-7hJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hiddenbutton" destination="YcI-Zw-aKn" id="Y9O-du-Bm9"/>
+                        <segue destination="ebg-cf-Adu" kind="show" identifier="Login" id="IIe-S0-dk6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R8q-Eh-j9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcX-AO-nUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59" y="-1454"/>
+            <point key="canvasLocation" x="191" y="-1314"/>
         </scene>
         <!--Login View-->
         <scene sceneID="oAV-wt-LHt">
@@ -45,6 +74,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="f9Y-2x-ptC" kind="show" identifier="LoggedIn" id="7vX-rL-m7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZzK-lN-iNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
