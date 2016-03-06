@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,14 +21,16 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-23-LMb">
                                 <rect key="frame" x="20" y="28" width="39" height="30"/>
-                                <state key="normal" title="Menu"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="openMenu" destination="f9Y-2x-ptC" eventType="touchUpInside" id="4mY-mI-tJK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcI-Zw-aKn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.28889627659574468" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73553856382978722" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="hideMenu" destination="f9Y-2x-ptC" eventType="touchUpInside" id="25F-lh-0ac"/>
                                 </connections>
@@ -46,11 +49,49 @@
                     <connections>
                         <outlet property="hiddenbutton" destination="YcI-Zw-aKn" id="Y9O-du-Bm9"/>
                         <segue destination="ebg-cf-Adu" kind="show" identifier="Login" id="IIe-S0-dk6"/>
+                        <segue destination="g1W-ap-Izx" kind="show" identifier="faccion" id="aGL-nY-mWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcX-AO-nUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="-1314"/>
+            <point key="canvasLocation" x="293" y="-1714"/>
+        </scene>
+        <!--Faccion Chooser View-->
+        <scene sceneID="Cy6-Fk-Xa5">
+            <objects>
+                <viewController id="g1W-ap-Izx" customClass="FaccionChooserView" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bwy-JR-rG4"/>
+                        <viewControllerLayoutGuide type="bottom" id="f7m-UO-W5q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eUD-bC-ZVA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escoge una Facción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-Qh-cLN">
+                                <rect key="frame" x="-42" y="101" width="684" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jQB-Qh-cLN" secondAttribute="height" multiplier="342:47" id="CwL-OD-EhY"/>
+                                    <constraint firstAttribute="width" constant="684" id="eh4-Kq-qCb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jQB-Qh-cLN" firstAttribute="top" secondItem="bwy-JR-rG4" secondAttribute="bottom" constant="81" id="Wdc-Wx-IC3"/>
+                            <constraint firstItem="jQB-Qh-cLN" firstAttribute="centerX" secondItem="eUD-bC-ZVA" secondAttribute="centerX" id="ciG-jA-inq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="f9Y-2x-ptC" kind="show" identifier="main" id="vP0-vh-xX0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCu-RH-XmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="-2077"/>
         </scene>
         <!--Login View-->
         <scene sceneID="oAV-wt-LHt">
@@ -63,15 +104,6 @@
                     <view key="view" contentMode="scaleToFill" id="VJF-76-HnN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-59-ZIG">
-                                <rect key="frame" x="279" y="384" width="42" height="30"/>
-                                <state key="normal" title="Log In"/>
-                                <connections>
-                                    <action selector="loginBttnClicked" destination="ebg-cf-Adu" eventType="touchUpInside" id="Kpv-f1-GOI"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -80,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZzK-lN-iNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173" y="-551"/>
+            <point key="canvasLocation" x="1068" y="-1303"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -137,4 +169,7 @@
             <point key="canvasLocation" x="173" y="103"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vP0-vh-xX0"/>
+    </inferredMetricsTieBreakers>
 </document>

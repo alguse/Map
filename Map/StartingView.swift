@@ -3,7 +3,7 @@
 //  Map
 //
 //  Created by Rodolfo Castillo on 05/03/16.
-//  Copyright © 2016 Sergio Albarran. All rights reserved.
+//  Copyright © 2016 Sergio Albarran & Rodolfo Castillo. All rights reserved.
 //
 
 import Foundation
@@ -15,32 +15,54 @@ class StartingView: UIViewController {
     var Name: String!
 //    var profilePic = UIImageView()
     var menu = SlidInMenu()
+    var navShape: UILabel!
+    var colorManager = ColorPallet()
+    var dataForServer : [String: [String:String]]!
+    var factione: String!
+    var userID: String!
+    var rocket = URLrequests()
     
     @IBOutlet weak var hiddenbutton: UIButton!
     
     override func viewDidLoad() {
 //            setUpProfilPic()
+        self.navShape = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.frame.width, height: 70)))
+        self.view.backgroundColor = colorManager.generalColor
+        self.view.addSubview(navShape)
+        self.view.sendSubviewToBack(navShape)
         self.menu.setUp(self)
         self.menu.frame.origin.x = 0 - self.menu.frame.width
         self.menu.frame.origin.y = 0
-        self.menu.backgroundColor = UIColor.greenColor()
-        self.hiddenbutton.alpha = 1
+        self.menu.alpha = 0
+//        self.menu.backgroundColor = UIColor.greenColor()
+        self.hiddenbutton.alpha = 0
+        self.hiddenbutton.enabled = false
             }
     
     override func viewDidAppear(animated: Bool) {
-
+        self.navShape.backgroundColor = colorManager.getFacColor()
         if data.stringForKey("Name") != nil {
             if data.stringForKey("Name") == nil {
-                print("ASJDLASJDAS")
+//                print("ASJDLASJDAS")
                 self.performSegueWithIdentifier("login", sender: self)
             } else {
                 self.Name = data.stringForKey("Name")
-                print(Name)
+                self.userID = data.stringForKey("UserID")
 //                self.profilePic.image = UIImage(data: (self.data.objectForKey("Photo") as! NSData))
             }
+            if data.stringForKey("Fac") == nil {
+                self.performSegueWithIdentifier("faccion", sender: self)
+                
+            } else {
+                self.factione = data.stringForKey("Fac")!
+                self.dataForServer = ["user":["name": Name, "fb_id": userID, "faction": factione]]
+//                self.rocket.launch("http://162.243.65.37/api/users", params: dataForServer)
+                self.rocket.shoot("http://162.243.65.37/api/users/2", params: ["user" : ["points": "1"]])
+            }
             print(Name)
+            
         } else {
-            print("asdasdasd")
+//            print("asdasdasd")
             self.performSegueWithIdentifier("Login", sender: self)
         }
 
@@ -54,6 +76,7 @@ class StartingView: UIViewController {
         } else{
             UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .CurveLinear, animations: {
                 self.menu.transform = CGAffineTransformIdentity
+                self.menu.alpha = 0
                 }, completion: nil)
         }
         
@@ -61,6 +84,7 @@ class StartingView: UIViewController {
     
     @IBAction func openMenu(){
         self.appearAnimiation(0)
+        self.menu.alpha = 1
         UIView.animateWithDuration(0.3, animations: {
             self.hiddenbutton.alpha = 1
         })
@@ -73,21 +97,10 @@ class StartingView: UIViewController {
         })
         self.hiddenbutton.enabled = false
     }
-    
-//    func setUpProfilPic(){
-//        self.profilePic.backgroundColor = UIColor.grayColor()
-//        self.profilePic.clipsToBounds = true
-//        self.profilePic.frame = CGRect(origin: CGPoint(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 50), size: CGSize(width: 100, height: 100))
-//        self.profilePic.layer.cornerRadius = self.profilePic.frame.width/2
-//        self.view.addSubview(profilePic)
-//    }
-    
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if "Login" == segue.identifier {
-            // Nothing really to do here, since it won't be fired unless
-            // shouldPerformSegueWithIdentifier() says it's ok. In a real app,
-            // this is where you'd pass data to the success view controller.
         }
     }
     
