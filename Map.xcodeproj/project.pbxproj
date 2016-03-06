@@ -14,7 +14,6 @@
 		C61566901C8BC49400737953 /* fireball_0005.png in Resources */ = {isa = PBXBuildFile; fileRef = C615668A1C8BC49400737953 /* fireball_0005.png */; };
 		C61566911C8BC49400737953 /* fireball_0006.png in Resources */ = {isa = PBXBuildFile; fileRef = C615668B1C8BC49400737953 /* fireball_0006.png */; };
 		C61566941C8BC52800737953 /* funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61566931C8BC52800737953 /* funcs.swift */; };
-		C61566961C8BEAD300737953 /* x.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61566951C8BEAD300737953 /* x.swift */; };
 		C61F740E1C8171C500835A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61F740D1C8171C500835A78 /* AppDelegate.swift */; };
 		C61F74101C8171C500835A78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61F740F1C8171C500835A78 /* ViewController.swift */; };
 		C61F74131C8171C500835A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61F74111C8171C500835A78 /* Main.storyboard */; };
@@ -49,7 +48,6 @@
 		C615668A1C8BC49400737953 /* fireball_0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0005.png; sourceTree = "<group>"; };
 		C615668B1C8BC49400737953 /* fireball_0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0006.png; sourceTree = "<group>"; };
 		C61566931C8BC52800737953 /* funcs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = funcs.swift; sourceTree = "<group>"; };
-		C61566951C8BEAD300737953 /* x.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = x.swift; sourceTree = "<group>"; };
 		C61F740A1C8171C500835A78 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61F740D1C8171C500835A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C61F740F1C8171C500835A78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				C61F74161C8171C500835A78 /* LaunchScreen.storyboard */,
 				C61F74191C8171C500835A78 /* Info.plist */,
 				C61566931C8BC52800737953 /* funcs.swift */,
-				C61566951C8BEAD300737953 /* x.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 			files = (
 				C61F74101C8171C500835A78 /* ViewController.swift in Sources */,
 				C61566941C8BC52800737953 /* funcs.swift in Sources */,
-				C61566961C8BEAD300737953 /* x.swift in Sources */,
 				C61F740E1C8171C500835A78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
