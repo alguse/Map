@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C615668C1C8BC49400737953 /* fireball_0001.png in Resources */ = {isa = PBXBuildFile; fileRef = C61566861C8BC49400737953 /* fireball_0001.png */; };
+		C615668D1C8BC49400737953 /* fireball_0002.png in Resources */ = {isa = PBXBuildFile; fileRef = C61566871C8BC49400737953 /* fireball_0002.png */; };
+		C615668E1C8BC49400737953 /* fireball_0003.png in Resources */ = {isa = PBXBuildFile; fileRef = C61566881C8BC49400737953 /* fireball_0003.png */; };
+		C615668F1C8BC49400737953 /* fireball_0004.png in Resources */ = {isa = PBXBuildFile; fileRef = C61566891C8BC49400737953 /* fireball_0004.png */; };
+		C61566901C8BC49400737953 /* fireball_0005.png in Resources */ = {isa = PBXBuildFile; fileRef = C615668A1C8BC49400737953 /* fireball_0005.png */; };
+		C61566911C8BC49400737953 /* fireball_0006.png in Resources */ = {isa = PBXBuildFile; fileRef = C615668B1C8BC49400737953 /* fireball_0006.png */; };
+		C61566941C8BC52800737953 /* funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61566931C8BC52800737953 /* funcs.swift */; };
 		C61F740E1C8171C500835A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61F740D1C8171C500835A78 /* AppDelegate.swift */; };
 		C61F74101C8171C500835A78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61F740F1C8171C500835A78 /* ViewController.swift */; };
 		C61F74131C8171C500835A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61F74111C8171C500835A78 /* Main.storyboard */; };
@@ -34,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C61566861C8BC49400737953 /* fireball_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0001.png; sourceTree = "<group>"; };
+		C61566871C8BC49400737953 /* fireball_0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0002.png; sourceTree = "<group>"; };
+		C61566881C8BC49400737953 /* fireball_0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0003.png; sourceTree = "<group>"; };
+		C61566891C8BC49400737953 /* fireball_0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0004.png; sourceTree = "<group>"; };
+		C615668A1C8BC49400737953 /* fireball_0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0005.png; sourceTree = "<group>"; };
+		C615668B1C8BC49400737953 /* fireball_0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball_0006.png; sourceTree = "<group>"; };
+		C61566931C8BC52800737953 /* funcs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = funcs.swift; sourceTree = "<group>"; };
 		C61F740A1C8171C500835A78 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61F740D1C8171C500835A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C61F740F1C8171C500835A78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C61566921C8BC49B00737953 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C61566861C8BC49400737953 /* fireball_0001.png */,
+				C61566871C8BC49400737953 /* fireball_0002.png */,
+				C61566881C8BC49400737953 /* fireball_0003.png */,
+				C61566891C8BC49400737953 /* fireball_0004.png */,
+				C615668A1C8BC49400737953 /* fireball_0005.png */,
+				C615668B1C8BC49400737953 /* fireball_0006.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C61F74011C8171C500835A78 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +108,7 @@
 				C61F74211C8171C500835A78 /* MapTests */,
 				C61F742C1C8171C500835A78 /* MapUITests */,
 				C61F740B1C8171C500835A78 /* Products */,
+				C61566921C8BC49B00737953 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +131,7 @@
 				C61F74141C8171C500835A78 /* Assets.xcassets */,
 				C61F74161C8171C500835A78 /* LaunchScreen.storyboard */,
 				C61F74191C8171C500835A78 /* Info.plist */,
+				C61566931C8BC52800737953 /* funcs.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -231,7 +260,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C61F74181C8171C500835A78 /* LaunchScreen.storyboard in Resources */,
+				C61566901C8BC49400737953 /* fireball_0005.png in Resources */,
+				C615668E1C8BC49400737953 /* fireball_0003.png in Resources */,
+				C615668C1C8BC49400737953 /* fireball_0001.png in Resources */,
+				C61566911C8BC49400737953 /* fireball_0006.png in Resources */,
+				C615668D1C8BC49400737953 /* fireball_0002.png in Resources */,
 				C61F74151C8171C500835A78 /* Assets.xcassets in Resources */,
+				C615668F1C8BC49400737953 /* fireball_0004.png in Resources */,
 				C61F74131C8171C500835A78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C61F74101C8171C500835A78 /* ViewController.swift in Sources */,
+				C61566941C8BC52800737953 /* funcs.swift in Sources */,
 				C61F740E1C8171C500835A78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
