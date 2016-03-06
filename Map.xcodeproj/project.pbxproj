@@ -14,6 +14,10 @@
 		C61F74181C8171C500835A78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61F74161C8171C500835A78 /* LaunchScreen.storyboard */; };
 		C61F74231C8171C500835A78 /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61F74221C8171C500835A78 /* MapTests.swift */; };
 		C61F742E1C8171C500835A78 /* MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61F742D1C8171C500835A78 /* MapUITests.swift */; };
+		E28109091C8BA0E100B973B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28109081C8BA0E100B973B4 /* FBSDKCoreKit.framework */; };
+		E281090E1C8BABA700B973B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E281090D1C8BABA700B973B4 /* FBSDKLoginKit.framework */; };
+		E28109101C8BACA000B973B4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281090F1C8BACA000B973B4 /* LoginView.swift */; };
+		E28109121C8BDCE900B973B4 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28109111C8BDCE900B973B4 /* StartingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,11 @@
 		C61F74291C8171C500835A78 /* MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61F742D1C8171C500835A78 /* MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUITests.swift; sourceTree = "<group>"; };
 		C61F742F1C8171C500835A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28109081C8BA0E100B973B4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		E281090C1C8BA29D00B973B4 /* Map-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Map-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		E281090D1C8BABA700B973B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		E281090F1C8BACA000B973B4 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E28109111C8BDCE900B973B4 /* StartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E281090E1C8BABA700B973B4 /* FBSDKLoginKit.framework in Frameworks */,
+				E28109091C8BA0E100B973B4 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +92,7 @@
 				C61F74211C8171C500835A78 /* MapTests */,
 				C61F742C1C8171C500835A78 /* MapUITests */,
 				C61F740B1C8171C500835A78 /* Products */,
+				E28109071C8BA0D300B973B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				C61F740D1C8171C500835A78 /* AppDelegate.swift */,
-				C61F740F1C8171C500835A78 /* ViewController.swift */,
 				C61F74111C8171C500835A78 /* Main.storyboard */,
+				E28109111C8BDCE900B973B4 /* StartingView.swift */,
+				E281090F1C8BACA000B973B4 /* LoginView.swift */,
+				E281090C1C8BA29D00B973B4 /* Map-Bridging-Header.h */,
+				C61F740F1C8171C500835A78 /* ViewController.swift */,
 				C61F74141C8171C500835A78 /* Assets.xcassets */,
 				C61F74161C8171C500835A78 /* LaunchScreen.storyboard */,
 				C61F74191C8171C500835A78 /* Info.plist */,
@@ -123,6 +138,15 @@
 				C61F742F1C8171C500835A78 /* Info.plist */,
 			);
 			path = MapUITests;
+			sourceTree = "<group>";
+		};
+		E28109071C8BA0D300B973B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E281090D1C8BABA700B973B4 /* FBSDKLoginKit.framework */,
+				E28109081C8BA0E100B973B4 /* FBSDKCoreKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +217,7 @@
 				TargetAttributes = {
 					C61F74091C8171C500835A78 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6778VBNDT3;
+						DevelopmentTeam = YFJ48SR2KW;
 					};
 					C61F741D1C8171C500835A78 = {
 						CreatedOnToolsVersion = 7.3;
@@ -257,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28109121C8BDCE900B973B4 /* StartingView.swift in Sources */,
+				E28109101C8BACA000B973B4 /* LoginView.swift in Sources */,
 				C61F74101C8171C500835A78 /* ViewController.swift in Sources */,
 				C61F740E1C8171C500835A78 /* AppDelegate.swift in Sources */,
 			);
@@ -398,14 +424,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "/Users/Rodolfo/Documents/FacebookSDKs-iOS-20160210";
 				INFOPLIST_FILE = Map/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alguse.Map;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Map-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -413,14 +443,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "/Users/Rodolfo/Documents/FacebookSDKs-iOS-20160210";
 				INFOPLIST_FILE = Map/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alguse.Map;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Map-Bridging-Header.h";
 			};
 			name = Release;
 		};
