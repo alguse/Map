@@ -13,6 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var anim: UIImageView!
     private let manejador = CLLocationManager()
     var previousLocation : CLLocation!
     @IBOutlet weak var vista: UISegmentedControl!
@@ -20,7 +21,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var imagesArr = ["fireball_0001.png","fireball_0002.png","fireball_0003.png","fireball_0004.png","fireball_0005.png","fireball_0006.png"]
+        var imgs = [UIImage]()
+        for i in 0..<imagesArr.count{
+            imgs.append(UIImage (named: imagesArr[i])!)
+        }
 
+        if Reach.isConnectedToNetwork() == true {
+            let req = URLrequests()
+            req.getEvents("3v3nts",id_event: nil) { (result, error) -> () in
+                if error != nil {
+                    print("Error logging")
+                } else {
+                    print(result)
+                }
+            }
+        }else {
+            let alertController = UIAlertController(title: "Internet Connection", message:
+                "Porfavor revisa tu conexión a Internet", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        anim.animationImages = imgs
+        anim.animationDuration = 1
+        anim.startAnimating()
+        
         manejador.requestWhenInUseAuthorization()
         manejador.delegate = self
         
@@ -127,6 +154,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         //}
         //return nil
     }
-    
+
 }
 
