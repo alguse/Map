@@ -21,6 +21,8 @@ class StartingView: UIViewController {
     var factione: String!
     var userID: String!
     var rocket = URLrequests()
+    var map3 = MapView2()
+
     
     @IBOutlet weak var hiddenbutton: UIButton!
     
@@ -37,6 +39,8 @@ class StartingView: UIViewController {
 //        self.menu.backgroundColor = UIColor.greenColor()
         self.hiddenbutton.alpha = 0
         self.hiddenbutton.enabled = false
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        map3.start(screenSize, controler: self)
             }
     
     override func viewDidAppear(animated: Bool) {
