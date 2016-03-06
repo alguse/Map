@@ -41,6 +41,7 @@ public class Reach {
 public class URLrequests{
     
     func getEvents(action : String, id_event : Int?, completion: (result: NSDictionary?, error: NSError?)->()){
+        
         var query : String = url+action
         if id_event != nil{
             query = query+"&id_event=\(id_event!)"
