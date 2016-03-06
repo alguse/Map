@@ -15,6 +15,7 @@ class StartingView: UIViewController {
     var Name: String!
 //    var profilePic = UIImageView()
     var menu = SlidInMenu()
+    var map3 = MapView2()
     
     @IBOutlet weak var hiddenbutton: UIButton!
     
@@ -25,7 +26,9 @@ class StartingView: UIViewController {
         self.menu.frame.origin.y = 0
         self.menu.backgroundColor = UIColor.greenColor()
         self.hiddenbutton.alpha = 1
-            }
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        map3.start(screenSize, controler: self)
+    }
     
     override func viewDidAppear(animated: Bool) {
 
